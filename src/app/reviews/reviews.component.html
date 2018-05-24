@@ -1,0 +1,46 @@
+<ul class="list-unstyled">
+  <h4>Reviews</h4>
+  <li>
+    <blockquote *ngFor="let review of gem.reviews">
+      <strong>Review Stars: {{ review.stars }}</strong><br>
+      {{ review.body }}
+      <cite class="clearfix">
+        &mdash; {{ review.author }}
+      </cite>
+    </blockquote>
+
+    <!-- Live Preview -->
+    <div *ngIf="newReview.stars != 0">
+      <blockquote>
+        <strong>Review Stars: {{ newReview.stars }}</strong><br>
+        {{ newReview.body }}
+        <cite class="clearfix">
+          &mdash; {{ newReview.author }}
+        </cite>
+      </blockquote>
+    </div>
+
+    <form action="" (ngSubmit)="submitClicked()">
+      <h4>Submit a Review</h4>
+      <fieldset class="form-group">
+        <select [(ngModel)]="newReview.stars" name="stars" class="form-control" title="Stars">
+          <option disabled>Rate the Product</option>
+          <option value="1">★</option>
+          <option value="2">★★</option>
+          <option value="3">★★★</option>
+          <option value="4">★★★★</option>
+          <option value="5">★★★★★</option>
+        </select>
+      </fieldset>
+      <fieldset class="form-group">
+        <textarea [(ngModel)]="newReview.body" name="body" class="form-control" cols="30" rows="10" placeholder="Write a short review of the product..."></textarea>
+      </fieldset>
+      <fieldset class="form-group">
+        <input [(ngModel)]="newReview.author" name="author" type="text" class="form-control" placeholder="John Smith" title="Email" />
+      </fieldset>
+      <fieldset class="form-group">
+        <input type="submit" value="Submit Review" class="btn btn-primary pull-right" />
+      </fieldset>
+    </form>
+  </li>
+</ul>

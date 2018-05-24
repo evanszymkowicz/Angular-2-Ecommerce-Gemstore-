@@ -1,0 +1,30 @@
+<div class="col-md-4">
+  <div class="list-group">
+    <div class="list-group-item">
+      <h3>
+        {{ gem.name }}
+        <em class="pull-right">
+          {{ gem.price | currency }}
+        </em>
+      </h3>
+
+      <div class="img-wrap product-image">
+        <img [src]="gem.imagePath" alt="">
+      </div>
+
+      <ul class="img-thubmnail clearfix">
+        <li class="small-image pull-left thumbnail">
+          <img src="" alt="">
+        </li>
+      </ul>
+
+      <div class="text-center">
+        <button (click)="addToCart()" *ngIf="gem.inventory > 0" class="btn btn-success">Add to Cart</button>
+        <button *ngIf="gem.inventory <= 0" class="btn btn-danger" disabled>Sold Out</button>
+      </div>
+    </div>
+
+    <app-tabs [gem]="gem"></app-tabs>
+
+  </div>
+</div>
