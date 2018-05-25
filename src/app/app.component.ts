@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { CartModel } from './cart-model';
-import { CartItemModel } from './cart-item-model';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +6,5 @@ import { CartItemModel } from './cart-item-model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  cart: CartModel = {
-    totalPrice: 0,
-    totalQuantity: 0,
-    items: []
-  }
-
-  title = 'app';
+  title = 'Gem Store';
 }
