@@ -1,3 +1,3 @@
-.nav-pills>li>a, .btn, .btn-danger {
-  border-radius: 0px !important;
+.nav-pills>li>a, .btn {
+  border-radius: 0px;
 }
